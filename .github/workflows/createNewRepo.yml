@@ -1,15 +1,7 @@
 
 name: Create new private repo
 
-on:
-  push:
-    branches:
-      - '**'
-    paths-ignore: 
-     - '.github/**'
-
-  pull_request:
-    types: [opened, synchronize, reopened]
+on: [workflow_dispatch]
     
 jobs:
   tfsec-analysis:
