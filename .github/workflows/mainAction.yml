@@ -1,1 +1,22 @@
 
+name: Create new private repo
+
+on:
+  push:
+    branches:
+      - '**'
+    paths-ignore: 
+     - '.github/**'
+
+  pull_request:
+    types: [opened, synchronize, reopened]
+    
+jobs:
+  tfsec-analysis:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Create a new repo
+      run: .github/scripts/createRepo.sh marcsanp ${{ secrets.MYPERSTOKEN }} test-demo-repo
+      
+      
