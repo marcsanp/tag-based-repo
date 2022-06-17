@@ -11,6 +11,9 @@ jobs:
     - name: Check out code from main
       uses: actions/checkout@v3
     
+    - name: Make next script excutable
+      run: chmod u+x .github/scripts/createRepo.sh
+    
     - name: Create a new repo
       run: .github/scripts/createRepo.sh marcsanp ${{ secrets.MYPERSTOKEN }} test-demo-repo
       
